@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProveedorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52888/ProveedorService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52888/ProveedorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52888/ProveedorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Indigowcf" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProveedorService_nuevoProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:nuevoProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_nuevoProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nuevoProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_editarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:editarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_editarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_eliminarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_eliminarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_buscarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_buscarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_mostrarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IProveedorService_mostrarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProveedorService">
+    <wsdl:operation name="nuevoProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProveedorService/nuevoProveedor" message="tns:IProveedorService_nuevoProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProveedorService/nuevoProveedorResponse" message="tns:IProveedorService_nuevoProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProveedorService/editarProveedor" message="tns:IProveedorService_editarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProveedorService/editarProveedorResponse" message="tns:IProveedorService_editarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProveedorService/eliminarProveedor" message="tns:IProveedorService_eliminarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProveedorService/eliminarProveedorResponse" message="tns:IProveedorService_eliminarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProveedorService/buscarProveedor" message="tns:IProveedorService_buscarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProveedorService/buscarProveedorResponse" message="tns:IProveedorService_buscarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProveedorService/mostrarProveedor" message="tns:IProveedorService_mostrarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProveedorService/mostrarProveedorResponse" message="tns:IProveedorService_mostrarProveedor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProveedorService" type="tns:IProveedorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="nuevoProveedor">
+      <soap:operation soapAction="http://tempuri.org/IProveedorService/nuevoProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IProveedorService/editarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IProveedorService/eliminarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IProveedorService/buscarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IProveedorService/mostrarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProveedorService">
+    <wsdl:port name="BasicHttpBinding_IProveedorService" binding="tns:BasicHttpBinding_IProveedorService">
+      <soap:address location="http://localhost:52888/ProveedorService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Indigowcf.ProductoService" CodeBehind="ProductoServices.svc.cs" %>

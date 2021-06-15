@@ -1,0 +1,1 @@
+SELECT Producto.Codigo, Producto.Nombre, COUNT(InventarioFisico.IdAlmacen) as Cantidad_Almacen FROM Producto JOIN InventarioFisico ON Producto.Id = InventarioFisico.IdProducto GROUP BY Producto.Codigo, Producto.Nombre; 
